@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.quilt-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Each block is 20% width (5 across) and 25% height (4 down) */
+.block {
+  flex: 0 0 20%;
+  height: 25%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Unique blocks with textures and colors */
+.block1 {
+  background-image: url("https://cdn.osxdaily.com/wp-content/uploads/2017/12/classic-mac-os-tile-wallpapers-4.png");
+}
+
+.block2 {
+  background-image: url("https://cdn.osxdaily.com/wp-content/uploads/2017/12/classic-mac-os-tile-wallpapers-3.png");
+}
+
+.block3 {
+  background-image: url("https://cdn.osxdaily.com/wp-content/uploads/2017/12/classic-mac-os-tile-wallpapers-2.png");
+}
+
+.block4 {
+  background-color: rgba(255, 107, 107, 0.8);
+}
+
+.block5 {
+  background-image: url("https://cdn.osxdaily.com/wp-content/uploads/2017/12/classic-mac-os-tile-wallpapers-1.png");
+}
