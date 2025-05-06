@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Dream First, Rent Later</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+html,body{margin:0;height:100%;font-family:system-ui,sans-serif;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+.scene{display:none;position:relative;height:100%;width:100%;background-size:cover;background-position:center;background-repeat:no-repeat}
+.scene.active{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 1rem;gap:1.5rem}
+h1{font-size:clamp(1.75rem,5vw,3.25rem);line-height:1.1;margin:0}
+p{max-width:60ch;font-size:clamp(1rem,2.2vw,1.3rem);margin:0}
+.choices{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.choice{background:#fff;color:#000;border:2px solid #000;padding:.85rem 1.4rem;font-size:clamp(.95rem,1.8vw,1.15rem);border-radius:10px;cursor:pointer;transition:transform .15s,background .15s}
+.choice:hover{transform:scale(1.06);background:#f0f0f0}
+.hud{position:absolute;top:1rem;left:1rem;background:rgba(0,0,0,.55);padding:.4rem 1rem;border-radius:6px;font-size:.9rem}
+@media(max-width:600px){.choice{padding:.7rem 1.1rem}.hud{font-size:.8rem}}
+</style>
+</head>
+<body>
+<div id="ohio" class="scene active" style="background-image:url('images/ohio.jpg')">
+<div class="hud">Ohio · Basement Wi‑Fi</div>
+<h1>Dream First, Rent Later</h1>
+<p>Mom says NYC rent is a crime; Twitter says living anywhere else is career suicide. Pick a first move.</p>
+<div class="choices">
+<button class="choice" data-go="nyc">Megabus to NYC</button>
+<button class="choice" data-go="sf">Stealth AI in SF</button>
+<button class="choice" data-go="la">Chase sunshine in LA</button>
+<button class="choice" data-go="home">Stay &amp; code for Kroger</button>
+</div>
+</div>
+
+<div id="nyc" class="scene" style="background-image:url('images/nyc.jpg')">
+<div class="hud">NYC · 6‑floor walk‑up</div>
+<h1>Welcome to the Concrete Sandbox</h1>
+<p>Your new title is "Junior AI Guru"—pairs nicely with a 120 sq ft room. Now what?</p>
+<div class="choices">
+<button class="choice" data-go="nycgrind">Grind 18‑hour fintech days</button>
+<button class="choice" data-go="nycmemes">Start a meme‑Substack empire</button>
+</div>
+</div>
+
+<div id="nycgrind" class="scene" style="background-image:url('images/nyc_night.jpg')">
+<div class="hud">NYC · Office nap pod</div>
+<h1>Code, Consume, Collapse</h1>
+<p>Two weeks in, your eye twitches Morse code. A Sequoia recruiter slides into your DMs.</p>
+<div class="choices">
+<button class="choice" data-go="la">Jump to LA for the pivot</button>
+<button class="choice" data-go="home">Rage‑quit and fly home</button>
+</div>
+</div>
+
+<div id="nycmemes" class="scene" style="background-image:url('images/nyc_meme.jpg')">
+<div class="hud">NYC · Influencer loft (lol)</div>
+<h1>Clout‑Chasing 101</h1>
+<p>Your meme page hits 10k followers; landlord raises rent 40% for the "vibe".</p>
+<div class="choices">
+<button class="choice" data-go="sf">Sell out and move to SF</button>
+<button class="choice" data-go="home">Crash with high‑school pal in Ohio</button>
+</div>
+</div>
+
+<div id="sf" class="scene" style="background-image:url('images/sf.jpg')">
+<div class="hud">SF · DAO‑owned duplex</div>
+<h1>Fog &amp; Funding</h1>
+<p>Your landlord is a blockchain. The hills are real; the salaries are alleged.</p>
+<div class="choices">
+<button class="choice" data-go="sfburn">Sleep under desk for equity</button>
+<button class="choice" data-go="la">Escape to LA for "balance"</button>
+</div>
+</div>
+
+<div id="sfburn" class="scene" style="background-image:url('images/sf_night.jpg')">
+<div class="hud">SF · WeWork shower</div>
+<h1>Hustle ’til You Rustle</h1>
+<p>Coffee IV drip keeps you alive till your stock options… don’t.</p>
+<div class="choices">
+<button class="choice" data-go="nyc">Try luck back in NYC</button>
+<button class="choice" data-go="home">Accept Midwest inner peace</button>
+</div>
+</div>
+
+<div id="la" class="scene" style="background-image:url('images/la.jpg')">
+<div class="hud">LA · Sublet with actors</div>
+<h1>Palm Trees &amp; Pitch Decks</h1>
+<p>You thought In‑N‑Out healed all wounds. Spoiler: it doesn’t.</p>
+<div class="choices">
+<button class="choice" data-go="lacrypto">Beach‑coworking crypto DAO</button>
+<button class="choice" data-go="home">Admit defeat, fly home</button>
+</div>
+</div>
+
+<div id="lacrypto" class="scene" style="background-image:url('images/la_crypto.jpg')">
+<div class="hud">LA · DAO Beach House (rugged)</div>
+<h1>Rug‑Pull &amp; Chill</h1>
+<p>The DAO rug‑pulls mid‑sunset yoga.</p>
+<div class="choices">
+<button class="choice" data-go="sf">Crawl back to SF clone‑lab</button>
+<button class="choice" data-go="home">Return to Ohio wiser</button>
+</div>
+</div>
+
+<div id="home" class="scene" style="background-image:url('images/home.jpg')">
+<div class="hud">Ohio · Two‑bedroom &amp; therapy</div>
+<h1>Back to the Buckeye State</h1>
+<p>You’re home, debt‑free, with lawn rights and decent Wi‑Fi. The end—or is it?</p>
+<div class="choices">
+<button class="choice" data-go="ohio">Restart adventure</button>
+</div>
+</div>
+
+<script>
+// Scene switcher
+const swap=target=>{
+  document.querySelector('.scene.active').classList.remove('active');
+  document.getElementById(target).classList.add('active');
+};
+
+document.addEventListener('click',e=>{
+  const btn=e.target.closest('.choice');
+  if(btn) swap(btn.dataset.go);
+});
+</script>
+</body>
+</html>
+
